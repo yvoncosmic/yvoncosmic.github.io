@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/24/8fa36299d6d57ca0.png">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/24/747808fadc3cc5d2.png">
 <meta property="article:published_time" content="2022-06-24T03:02:00.000Z">
-<meta property="article:modified_time" content="2022-06-24T12:31:03.113Z">
+<meta property="article:modified_time" content="2022-06-24T12:32:21.195Z">
 <meta property="article:author" content="cosmic">
 <meta property="article:tag" content="亿点心得">
 <meta name="twitter:card" content="summary_large_image">
@@ -331,9 +331,6 @@ RestartSec=15
 Restart=always
 [Install]
 WantedBy=multi-user.target
-
-systemctl start teamspeak
-systemctl enable teamspeak
 </code></pre>
 <p>第四步，重新加载服务配置文件，使新服务的服务程序配置文件生效</p>
 <pre><code class="hljs">systemctl daemon-reload
