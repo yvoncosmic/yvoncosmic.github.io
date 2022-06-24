@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Teamspeak3服务端简易部署 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="最近腾讯云618活动，入手了一台轻量应用服务器，新人首单价格还行，配置如图。  参与买赠活动有两个福利可以选择其中一个：1.使用一个4C8G的服务器一个月 2.续费你的订单服务器一个月。我选择了后者，我觉得只是试用的话那还是算了，不如续杯。 正好拿来与小伙伴测试下传说的职业哥用的交流软件Teamspeak3，个人的部署流程如下 一、环境准备1、ECS云服务器一台，系统是Ubuntu Server">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Teamspeak3服务端简易部署">
 <meta property="og:url" content="http://example.com/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近腾讯云618活动，入手了一台轻量应用服务器，新人首单价格还行，配置如图。  参与买赠活动有两个福利可以选择其中一个：1.使用一个4C8G的服务器一个月 2.续费你的订单服务器一个月。我选择了后者，我觉得只是试用的话那还是算了，不如续杯。 正好拿来与小伙伴测试下传说的职业哥用的交流软件Teamspeak3，个人的部署流程如下 一、环境准备1、ECS云服务器一台，系统是Ubuntu Server">
@@ -16,9 +16,10 @@
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/24/5380d996a801d111.png">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/24/8fa36299d6d57ca0.png">
 <meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/24/747808fadc3cc5d2.png">
-<meta property="article:published_time" content="2022-06-24T02:58:46.717Z">
-<meta property="article:modified_time" content="2022-06-24T02:57:30.590Z">
+<meta property="article:published_time" content="2022-06-24T03:02:00.000Z">
+<meta property="article:modified_time" content="2022-06-24T03:03:03.160Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="心得">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/06/24/5380d996a801d111.png">
   
@@ -80,12 +81,22 @@
         <section id="main"><article id="post-TeamSpeak 3服务端简易部署" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/" class="article-date">
-  <time class="dt-published" datetime="2022-06-24T02:58:46.717Z" itemprop="datePublished">2022-06-24</time>
+  <time class="dt-published" datetime="2022-06-24T03:02:00.000Z" itemprop="datePublished">2022-06-24</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Teamspeak3服务端简易部署
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -124,10 +135,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/" data-id="cl4rv6o9j0000rgvlao18evcw" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/" data-id="cl4rvcdm10000o4vlbdlj4ztu" data-title="Teamspeak3服务端简易部署" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%83%E5%BE%97/" rel="tag">心得</a></li></ul>
+
     </footer>
   </div>
   
@@ -157,7 +170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E9%A3%9F%E8%B0%88%E8%AE%B0/" rel="tag">小食谈记</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E9%A3%9F%E8%B0%88%E8%AE%B0/" rel="tag">小食谈记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E5%BE%97/" rel="tag">心得</a></li></ul>
     </div>
   </div>
 
@@ -167,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E5%B0%8F%E9%A3%9F%E8%B0%88%E8%AE%B0/" style="font-size: 10px;">小食谈记</a>
+      <a href="/tags/%E5%B0%8F%E9%A3%9F%E8%B0%88%E8%AE%B0/" style="font-size: 10px;">小食谈记</a> <a href="/tags/%E5%BF%83%E5%BE%97/" style="font-size: 10px;">心得</a>
     </div>
   </div>
 
@@ -189,7 +202,7 @@
       <ul>
         
           <li>
-            <a href="/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/">(no title)</a>
+            <a href="/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/">Teamspeak3服务端简易部署</a>
           </li>
         
           <li>
