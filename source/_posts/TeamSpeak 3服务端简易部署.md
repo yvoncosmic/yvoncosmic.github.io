@@ -18,6 +18,10 @@ tags: 亿点心得
 
 2、Teamspeak官网下载对应的服务端文件：[https://www.teamspeak.com/en/downloads/#server](https://www.teamspeak.com/en/downloads/#server)
 
+Teamspeak客户端：[https://www.teamspeak.com/en/downloads/#client](https://www.teamspeak.com/en/downloads/#client) (需自行汉化)
+
+Teamspeak汉化客户端(盗版)：[http://www.ts1.cn/download](http://www.ts1.cn/download)
+
 3、Xshell，Xftp或者其它命令行工具以及FTP工具
 
 ### 二、部署服务端 ###
@@ -48,22 +52,71 @@ tags: 亿点心得
 
 记得在服务商或者终端放行服务需要的端口，ts3需要的端口是
 
-UDP: 9987
+> UDP: 9987
+> 
+> TCP: 10011
+> 
+> TCP: 30033
 
-TCP: 10011
-
-TCP: 30033
-
-到这一步，服务端的部署基本就完成了，此时ts3就可以连上你的私人语言频道了，在客户端左上角连接里填入你的服务器ip或者域名(多一步解析)以及上一步中终端给你的信息即可。
-
-快和小伙伴畅享高质量，无延迟的语言交流吧。
+到这一步，服务端的部署基本就完成了，此时ts3就可以连上你的私人语言频道了，在客户端左上角连接里填入你的服务器ip或者域名(多一步解析)以及上一步中终端给你的信息即可。快和小伙伴畅享高质量，无延迟的语言交流吧。
 
 ![](https://s3.bmp.ovh/imgs/2022/06/24/747808fadc3cc5d2.png)
 
-### 四、总结 ###
+### 四、设置开机自启 ###
+
+服务运行后，是没有开机自启的。如果遇到平时重启，主机崩溃之类的还要手动运行较麻烦。可以相应设置一个开机自启的脚本，灵活应对重启状况。
+
+第一步，切换到root用户下，用su指令即可
+
+第二步，在系统服务文件下新建一个teamspeak.service文件
+
+    vim /lib/systemd/system/teamspeak.service
+
+第三步，进入插入模式，向文本添加以下内容。注意所有涉及路径的地方请根据个人情况自行修改，否则将无法运行。
+"/root/teamspeak3"为我的安装路径
+
+    [Unit]
+    Description=Teamspeak server
+    After=network.target
+    
+    [Service]
+    WorkingDirectory=/root/teamspeak3
+    User=teamspeak
+    Group=teamspeak
+    Type=forking
+    ExecStart=/root/teamspeak3/ts3server_startscript.sh start
+    Inifile=ts3server.ini
+    ExecStop=/root/teamspeak3/ts3server_startscript.sh stop
+    PIDFile=/root/teamspeak3/ts3server.pid
+    RestartSec=15
+    Restart=always
+    [Install]
+    WantedBy=multi-user.target
+
+第四步，重新加载服务配置文件，使新服务的服务程序配置文件生效
+
+    systemctl daemon-reload
+
+第五步，设置开启服务自启动即可，因为此时teamspeak已经在运行了
+
+    systemctl enable teamspeak.service
+
+附上三条启停的指令
+
+1.启动 TeamSpeak：
+
+    systemctl start teamspeak.service
+
+2.停止 TeamSpeak：
+
+    systemctl stop teamspeak.service
+
+3.重启 TeamSpeak：
+
+    systemctl restart teamspeak.service
+
+### 五、总结 ###
 
 个人觉得还是比yy好用不少的，主要体现在以下几点：更少的资源暂用，语音感应激活（更少收录队友杂音），启动速度更快，无开屏弹窗广告纵享丝滑。
 
-部署过程中还是碰到了许多小磕碜，例如服务器权限丢失（重装解决），忘记在服务提供商开放端口等等，都是小问题。
-
-当然如果你单纯只为了架ts3而购买服务器是大可不必的，和小伙伴一顿使用下来没浪费多少多少服务器资源，静置状态只有2%的内存占用，相当于40M？？
+当然如果你单纯只为了架ts3而购买服务器是大可不必的，和小伙伴一顿使用下来没浪费多少多少服务器资源，静置状态只有2%的内存占用，相当于40M？？可以说真的很轻量了。
