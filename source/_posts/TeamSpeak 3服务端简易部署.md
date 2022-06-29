@@ -34,15 +34,21 @@ Teamspeak汉化客户端(盗版)：[http://www.ts1.cn/download](http://www.ts1.c
 
 在终端中进入该文件夹，给予sh脚本运行权限
 
-    chmod 777 ts3server_startscript.sh
+```bash
+chmod 777 ts3server_startscript.sh
+```
 
 启动服务之前，你还需要同意一份用户协议，我们直接执行该指令
 
-    touch .ts3server_license_accepted
+```bash
+touch .ts3server_license_accepted
+```
 
 启动服务，这一步我直接用root用户运行了，尽管它会发出警告。建议懂得用户权限系统的运行在普通用户下即可，我是弄不明白。
 
-    ./ts3server_startscript.sh start
+```bash
+./ts3server_startscript.sh start
+```
 
 接着会给你登录账号和密码，以及一枚权限密钥token，这个密钥是最重要的请保存下来，一会登录服务器要用。
 
@@ -70,50 +76,66 @@ Teamspeak汉化客户端(盗版)：[http://www.ts1.cn/download](http://www.ts1.c
 
 第二步，在系统服务文件下新建一个teamspeak.service文件
 
-    vim /lib/systemd/system/teamspeak.service
+```bash
+vim /lib/systemd/system/teamspeak.service
+```
 
 第三步，进入插入模式，向文本添加以下内容。注意所有涉及路径的地方请根据个人情况自行修改，否则将无法运行。
 "/root/teamspeak3"为我的安装路径
 
-    [Unit]
-    Description=Teamspeak server
-    After=network.target
-    
-    [Service]
-    WorkingDirectory=/root/teamspeak3
-    User=teamspeak
-    Group=teamspeak
-    Type=forking
-    ExecStart=/root/teamspeak3/ts3server_startscript.sh start
-    Inifile=ts3server.ini
-    ExecStop=/root/teamspeak3/ts3server_startscript.sh stop
-    PIDFile=/root/teamspeak3/ts3server.pid
-    RestartSec=15
-    Restart=always
-    [Install]
-    WantedBy=multi-user.target
+```
+[Unit]
+Description=Teamspeak server
+After=network.target
+
+[Service]
+WorkingDirectory=/root/teamspeak3
+User=teamspeak
+Group=teamspeak
+Type=forking
+ExecStart=/root/teamspeak3/ts3server_startscript.sh start
+Inifile=ts3server.ini
+ExecStop=/root/teamspeak3/ts3server_startscript.sh stop
+PIDFile=/root/teamspeak3/ts3server.pid
+RestartSec=15
+Restart=always
+[Install]
+WantedBy=multi-user.target
+```
 
 第四步，重新加载服务配置文件，使新服务的服务程序配置文件生效
 
-    systemctl daemon-reload
+```bash
+systemctl daemon-reload
+```
 
 第五步，设置开启服务自启动即可，因为此时teamspeak已经在运行了
 
-    systemctl enable teamspeak.service
+```bash
+systemctl enable teamspeak.service
+```
 
 附上三条启停的指令
 
 1.启动 TeamSpeak：
 
-    systemctl start teamspeak.service
+```bash
+systemctl start teamspeak.serviceb
+```
 
 2.停止 TeamSpeak：
 
-    systemctl stop teamspeak.service
+```bash
+systemctl stop teamspeak.service
+```
 
 3.重启 TeamSpeak：
 
-    systemctl restart teamspeak.service
+```bash
+systemctl restart teamspeak.serviceb
+```
+
+
 
 ### 五、总结 ###
 
