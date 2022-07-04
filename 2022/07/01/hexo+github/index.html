@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2022/07/01/jMHEFA.png">
 <meta property="article:published_time" content="2022-07-01T01:40:32.000Z">
-<meta property="article:modified_time" content="2022-07-01T03:26:11.014Z">
+<meta property="article:modified_time" content="2022-07-04T03:27:31.546Z">
 <meta property="article:author" content="cosmic">
 <meta property="article:tag" content="亿点心得">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          6.1k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          23 分钟
+          51 分钟
         
       </span>
     
@@ -301,22 +301,14 @@
 <p><strong>1.4、Hexo</strong></p>
 <p>Hexo是一个基于nodejs 的静态博客网站生成器。</p>
 <h3 id="二、大致流程"><a href="#二、大致流程" class="headerlink" title="二、大致流程"></a>二、大致流程</h3><p>2.1、进行环境配置，在本地安装git、Node.js和hexo;</p>
-<p>2.2、注册<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=GitHub&spm=1001.2101.3001.7020">GitHub</a>账户并创建远程仓库；</p>
-<p>2.3、使用hexo本地编辑文章并实现本地预览；</p>
+<p>2.2、使用hexo本地编辑文章并实现本地预览；</p>
+<p>2.3、注册<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>账户并创建远程仓库；</p>
 <p>2.4、使用git bash部署到GitHub供人浏览观看；</p>
 <p>2.5、主题美化。</p>
 <h3 id="三、安装步骤"><a href="#三、安装步骤" class="headerlink" title="三、安装步骤"></a>三、安装步骤</h3><p><strong>3.1、安装git</strong></p>
-<p>官网地址：<a target="_blank" rel="noopener" href="https://gitforwindows.org/%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E3%80%82">https://gitforwindows.org/，下载安装。</a></p>
-<p>然后打开Git Bash<strong>设置用户</strong>。目的时告诉远程仓库谁上传的。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;GitHub的用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;注册GitHub使用的邮箱&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>然后通过下面代码即可查看用户信息配置。</p>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">git config</span> <span class="hljs-literal">--</span><span class="hljs-comment">global</span> <span class="hljs-literal">--</span><span class="hljs-comment">list</span><br></code></pre></td></tr></table></figure>
-
-</br>
-
+<p>官网地址：<a target="_blank" rel="noopener" href="https://gitforwindows.org/">下载安装</a></p>
 <p><strong>3.2、安装Node.js</strong></p>
-<p>Node.js中文官网地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E3%80%82">https://nodejs.org/zh-cn/，下载安装。</a></p>
+<p>Node.js中文官网地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">下载安装</a></p>
 <p>①安装后，在nodejs安装文件夹下新建两个空白文件夹【node_global】【node_cache】</p>
 <p>②创建完两个空文件夹之后，打开cmd命令窗口，输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> prefix <span class="hljs-string">&quot;D:\Environment\nodejs\node_global&quot;</span>  //设置使用npm全局安装时下载文件的位置<br>npm config <span class="hljs-built_in">set</span> cache <span class="hljs-string">&quot;D:\Environment\nodejs\node_cache&quot;</span>    //设置缓存位置<br>npm config <span class="hljs-built_in">set</span> registry https://registry.npm.taobao.org/   //更换镜像源，加快下载速度<br>npm config list                                            //显示配置信息<br></code></pre></td></tr></table></figure>
@@ -363,11 +355,18 @@
 </br>
 
 <p><strong>4.3、本地部署静态页面</strong></p>
-<figure class="highlight sas"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sas">hexo cl <span class="hljs-variable">&amp;&amp;</span> hexo g <span class="hljs-variable">&amp;&amp;</span> hexo s<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
 
 
 
-<h3 id="五、推送至github"><a href="#五、推送至github" class="headerlink" title="五、推送至github"></a>五、推送至github</h3><p>①在github上创建并设置个人远程库，注册登录略过，不会的请自行百度。这里有一点必须注意，存储库名称必须为<code>用户名.github.io</code></p>
+<h3 id="五、部署至github-pages"><a href="#五、部署至github-pages" class="headerlink" title="五、部署至github pages"></a>五、部署至github pages</h3><p>①注册github账号</p>
+<p>在github上创建并设置个人远程库，注册登录略过，不会的请自行百度。这里有一点必须注意，存储库名称必须为<code>用户名.github.io</code></p>
+<p>然后打开Git Bash<strong>设置用户</strong>。目的时告诉远程仓库谁上传的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;GitHub的用户名&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;注册GitHub使用的邮箱&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后通过下面代码即可查看用户信息配置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global --list<br></code></pre></td></tr></table></figure>
+
 <p>②git bash下生成密钥</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;XXXXXXXXX@XXX.com&quot;</span><br></code></pre></td></tr></table></figure>
 
@@ -376,20 +375,42 @@
 
 <p>④在<code>Github个人设置</code>中添加<code>ssh key</code></p>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jMHEFA"><img src="https://s1.ax1x.com/2022/07/01/jMHEFA.png" srcset="/img/loading.gif" lazyload alt="jMHEFA.png"></a></p>
-<p>⑤修改hexo根目录下的文件<code>_config.yml</code>中的deploy，添加之前保存的ssh，注意自己的github的hexo项目主分支名称，一般是main或者master。</p>
+<p>⑤修改hexo根目录下的文件<code>_config.yml</code>中的deploy，<strong>请将用户名修改为自己的用户名</strong>。注意自己的github的hexo项目主分支名称，一般是main或者master。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br> <span class="hljs-built_in">type</span>: git<br> repo: git@github.com:yvoncosmic/yvoncosmic.github.io.git<br> branch: main<br></code></pre></td></tr></table></figure>
 
-<p>⑥推送至github</p>
+<p>⑥部署至github pages</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d <span class="hljs-comment">#一键推送</span><br></code></pre></td></tr></table></figure>
 
-<p>⑦查看blog,<code>https://username.github.io</code></p>
+<p>⑦查看blog：<a target="_blank" rel="noopener" href="https://yvoncosmic.github.io/">https://yvoncosmic.github.io</a></p>
 <p>⑧依次执行以下命令提交网站相关的文件（hexo存放网站的原始文件）</p>
 <p>hexo为github副分支，有别于main主分支，我用来存放hexo源文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;init&quot;</span><br>git push origin hexo<br></code></pre></td></tr></table></figure>
 
 
 
-<h3 id="六、博客美化"><a href="#六、博客美化" class="headerlink" title="六、博客美化"></a>六、博客美化</h3><p>待更..</p>
+<h3 id="六、博客美化"><a href="#六、博客美化" class="headerlink" title="六、博客美化"></a>六、博客美化</h3><p><strong>6.1、主题安装</strong></p>
+<p>选用了一款 Material Design 风格的主题Fluid，官方Github页面：<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
+<p>根据用户文档安装即可</p>
+</br>
+
+<p><strong>6.2、添加鼠标点击效果</strong></p>
+<p>这是一个点击鼠标显示红心并浮现社会主义核心价值观的效果，挺有意思。<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_13640625/3033188">参考文章</a></p>
+<p>①添加love-click.js放在..&#x2F;hexo&#x2F;themes&#x2F;next&#x2F;source&#x2F;js&#x2F;目录下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/* 爱心特效 */</span><br><br>!<span class="hljs-keyword">function</span> (<span class="hljs-params">e, t, a</span>) &#123;<br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">r</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> e = <span class="hljs-number">0</span>; e &lt; s.<span class="hljs-property">length</span>; e++) s[e].<span class="hljs-property">alpha</span> &lt;= <span class="hljs-number">0</span> ? (t.<span class="hljs-property">body</span>.<span class="hljs-title function_">removeChild</span>(s[e].<span class="hljs-property">el</span>), s.<span class="hljs-title function_">splice</span>(e, <span class="hljs-number">1</span>)) : (s[e].<span class="hljs-property">y</span>--, s[e].<span class="hljs-property">scale</span> += <span class="hljs-number">.004</span>, s[e].<span class="hljs-property">alpha</span> -= <span class="hljs-number">.013</span>, s[e].<span class="hljs-property">el</span>.<span class="hljs-property">style</span>.<span class="hljs-property">cssText</span> = <span class="hljs-string">&quot;left:&quot;</span> + s[e].<span class="hljs-property">x</span> + <span class="hljs-string">&quot;px;top:&quot;</span> + s[e].<span class="hljs-property">y</span> + <span class="hljs-string">&quot;px;opacity:&quot;</span> + s[e].<span class="hljs-property">alpha</span> + <span class="hljs-string">&quot;;transform:scale(&quot;</span> + s[e].<span class="hljs-property">scale</span> + <span class="hljs-string">&quot;,&quot;</span> + s[e].<span class="hljs-property">scale</span> + <span class="hljs-string">&quot;) rotate(45deg);background:&quot;</span> + s[e].<span class="hljs-property">color</span> + <span class="hljs-string">&quot;;z-index:99999&quot;</span>);<br>    <span class="hljs-title function_">requestAnimationFrame</span>(r)<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">n</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> t = <span class="hljs-string">&quot;function&quot;</span> == <span class="hljs-keyword">typeof</span> e.<span class="hljs-property">onclick</span> &amp;&amp; e.<span class="hljs-property">onclick</span>;<br>    e.<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>      t &amp;&amp; <span class="hljs-title function_">t</span>(), <span class="hljs-title function_">o</span>(e)<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">o</span>(<span class="hljs-params">e</span>) &#123;<br>    <span class="hljs-keyword">var</span> a = t.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);<br>    a.<span class="hljs-property">className</span> = <span class="hljs-string">&quot;heart&quot;</span>, s.<span class="hljs-title function_">push</span>(&#123;<br>      <span class="hljs-attr">el</span>: a,<br>      <span class="hljs-attr">x</span>: e.<span class="hljs-property">clientX</span> - <span class="hljs-number">5</span>,<br>      <span class="hljs-attr">y</span>: e.<span class="hljs-property">clientY</span> - <span class="hljs-number">5</span>,<br>      <span class="hljs-attr">scale</span>: <span class="hljs-number">1</span>,<br>      <span class="hljs-attr">alpha</span>: <span class="hljs-number">1</span>,<br>      <span class="hljs-attr">color</span>: <span class="hljs-title function_">c</span>()<br>    &#125;), t.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(a)<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">i</span>(<span class="hljs-params">e</span>) &#123;<br>    <span class="hljs-keyword">var</span> a = t.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;style&quot;</span>);<br>    a.<span class="hljs-property">type</span> = <span class="hljs-string">&quot;text/css&quot;</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>      a.<span class="hljs-title function_">appendChild</span>(t.<span class="hljs-title function_">createTextNode</span>(e))<br>    &#125; <span class="hljs-keyword">catch</span> (t) &#123;<br>      a.<span class="hljs-property">styleSheet</span>.<span class="hljs-property">cssText</span> = e<br>    &#125;<br>    t.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">&quot;head&quot;</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">appendChild</span>(a)<br>  &#125;<br><br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">c</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;rgb(&quot;</span> + ~~(<span class="hljs-number">255</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()) + <span class="hljs-string">&quot;,&quot;</span> + ~~(<span class="hljs-number">255</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()) + <span class="hljs-string">&quot;,&quot;</span> + ~~(<span class="hljs-number">255</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()) + <span class="hljs-string">&quot;)&quot;</span><br>  &#125;<br>  <span class="hljs-keyword">var</span> s = [];<br>  e.<span class="hljs-property">requestAnimationFrame</span> = e.<span class="hljs-property">requestAnimationFrame</span> || e.<span class="hljs-property">webkitRequestAnimationFrame</span> || e.<span class="hljs-property">mozRequestAnimationFrame</span> || e.<span class="hljs-property">oRequestAnimationFrame</span> || e.<span class="hljs-property">msRequestAnimationFrame</span> || <span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>    <span class="hljs-built_in">setTimeout</span>(e, <span class="hljs-number">1e3</span> / <span class="hljs-number">60</span>)<br>  &#125;, <span class="hljs-title function_">i</span>(<span class="hljs-string">&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#x27;&#x27;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;</span>), <span class="hljs-title function_">n</span>(), <span class="hljs-title function_">r</span>()<br>&#125;(<span class="hljs-variable language_">window</span>, <span class="hljs-variable language_">document</span>);<br><br><span class="hljs-comment">/* 社会主体核心价值观效果 */</span><br><span class="hljs-keyword">var</span> a_idx = <span class="hljs-number">0</span>;<br><span class="hljs-title function_">jQuery</span>(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">$</span>) &#123;<br>  $(<span class="hljs-string">&quot;body&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) &#123;<br>    <span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-string">&quot;富强&quot;</span>, <span class="hljs-string">&quot;民主&quot;</span>, <span class="hljs-string">&quot;文明&quot;</span>, <span class="hljs-string">&quot;和谐&quot;</span>, <span class="hljs-string">&quot;自由&quot;</span>, <span class="hljs-string">&quot;平等&quot;</span>, <span class="hljs-string">&quot;公正&quot;</span>, <span class="hljs-string">&quot;法治&quot;</span>, <span class="hljs-string">&quot;爱国&quot;</span>, <span class="hljs-string">&quot;敬业&quot;</span>, <span class="hljs-string">&quot;诚信&quot;</span>, <span class="hljs-string">&quot;友善&quot;</span>);<br>    <span class="hljs-keyword">var</span> $i = $(<span class="hljs-string">&quot;&lt;span/&gt;&quot;</span>).<span class="hljs-title function_">text</span>(a[a_idx]);<br>    a_idx = (a_idx + <span class="hljs-number">1</span>) % a.<span class="hljs-property">length</span>;<br>    <span class="hljs-keyword">var</span> x = e.<span class="hljs-property">pageX</span>,<br>      y = e.<span class="hljs-property">pageY</span>;<br>    $i.<span class="hljs-title function_">css</span>(&#123;<br>      <span class="hljs-string">&quot;z-index&quot;</span>: <span class="hljs-number">100000000</span>,<br>      <span class="hljs-string">&quot;top&quot;</span>: y - <span class="hljs-number">20</span>,<br>      <span class="hljs-string">&quot;left&quot;</span>: x,<br>      <span class="hljs-string">&quot;position&quot;</span>: <span class="hljs-string">&quot;absolute&quot;</span>,<br>      <span class="hljs-string">&quot;font-weight&quot;</span>: <span class="hljs-string">&quot;bold&quot;</span>,<br>      <span class="hljs-string">&quot;color&quot;</span>: <span class="hljs-string">&quot;#ff6651&quot;</span><br>    &#125;);<br>    $(<span class="hljs-string">&quot;body&quot;</span>).<span class="hljs-title function_">append</span>($i);<br>    $i.<span class="hljs-title function_">animate</span>(&#123;<br>      <span class="hljs-string">&quot;top&quot;</span>: y - <span class="hljs-number">180</span>,<br>      <span class="hljs-string">&quot;opacity&quot;</span>: <span class="hljs-number">0</span><br>    &#125;, <span class="hljs-number">1500</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>      $i.<span class="hljs-title function_">remove</span>();<br>    &#125;);<br>  &#125;);<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p>②修改我们的Fluid主题配置文件<code>_config.fluid.yml</code>，调用该js文件即可，向文件中<code>custom_js</code>参数中添加如下内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">custom_js</span>: - <span class="hljs-regexp">/js/</span>love-click.<span class="hljs-property">js</span> # 鼠标点击特效<br></code></pre></td></tr></table></figure>
+
+<p>注意：如果有多个js文件需要调用，那么需要隔行逐一添加，这个是用户文档要求的，不仔细看容易踩坑。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">custom_js</span>: <br>  - <span class="hljs-regexp">/js/</span>love-click.<span class="hljs-property">js</span> # 鼠标点击特效<br>  - <span class="hljs-regexp">/js/</span>snow.<span class="hljs-property">js</span> #雪花<br></code></pre></td></tr></table></figure>
+
+</br>
+
+<p><strong>6.3、背景添加动态线条</strong></p>
+<p>这是一个我很喜欢的特效，线条会慢慢向你的鼠标指向位置聚拢。<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1943700">参考文章</a></p>
+<p>像上一步一样，主题配置文件允许你直接调用js文件的url链接，那么我们直接像这样添加一个url，调用它即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">custom_js</span>: <br>  - <span class="hljs-regexp">/js/</span>love-click.<span class="hljs-property">js</span> # 鼠标点击特效<br>  - <span class="hljs-regexp">/js/</span>snow.<span class="hljs-property">js</span> #雪花<br>  - <span class="hljs-comment">//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js # 背景动态线条</span><br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -433,7 +454,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月1日</div>
+          <div>2022年7月4日</div>
         </div>
       
       <div class="license-meta-item">
