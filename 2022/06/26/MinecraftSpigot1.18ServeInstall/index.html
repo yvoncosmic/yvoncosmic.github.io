@@ -16,24 +16,31 @@
   <meta name="author" content="cosmic">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、前言最近心血来潮想在ECS上架设MC服务器和小伙伴一起玩耍回味童年的味道，那么就必须要安装java环境。 Java版本后缀眼花缭乱，到底该安装哪个才能运行我的世界核心包，就是那个.jar的文件？ 首先需了解以下几个概念，这个问题就很好解决了：   JDK(Java Development Kit)Java开发工具：包含：包含JRE，以及增加编译器和调试器等用于程序开发的文件。  JRE(Jav">
+    <meta name="description" content="一、环境准备1、Java环境，MC不同的版本也有对应不同的java版本，例如这里的使用的spigot1.18需要java17 2、服务端核心，下载地址https:&#x2F;&#x2F;getbukkit.org&#x2F;download&#x2F;spigot 二、部署过程1、将上一步得到的核心文件spigot-1.xx.jar，上传至你的服务器目录运行即可。 注意：运行后会生成很多服务端文件，所以可以新建一个文件夹用于存放服务端文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux安装java17流程">
-<meta property="og:url" content="http://example.com/2022/06/26/Linux%E4%B8%8BJava17%E7%9A%84%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:title" content="我的世界Spigot1.18简易部署流程">
+<meta property="og:url" content="http://example.com/2022/06/26/MinecraftSpigot1.18ServeInstall/index.html">
 <meta property="og:site_name" content="xx辉の有感而发">
-<meta property="og:description" content="一、前言最近心血来潮想在ECS上架设MC服务器和小伙伴一起玩耍回味童年的味道，那么就必须要安装java环境。 Java版本后缀眼花缭乱，到底该安装哪个才能运行我的世界核心包，就是那个.jar的文件？ 首先需了解以下几个概念，这个问题就很好解决了：   JDK(Java Development Kit)Java开发工具：包含：包含JRE，以及增加编译器和调试器等用于程序开发的文件。  JRE(Jav">
+<meta property="og:description" content="一、环境准备1、Java环境，MC不同的版本也有对应不同的java版本，例如这里的使用的spigot1.18需要java17 2、服务端核心，下载地址https:&#x2F;&#x2F;getbukkit.org&#x2F;download&#x2F;spigot 二、部署过程1、将上一步得到的核心文件spigot-1.xx.jar，上传至你的服务器目录运行即可。 注意：运行后会生成很多服务端文件，所以可以新建一个文件夹用于存放服务端文">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-26T04:11:36.000Z">
-<meta property="article:modified_time" content="2022-06-26T08:33:31.629Z">
+<meta property="og:image" content="https://s1.ax1x.com/2022/06/26/jA4v9I.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/06/26/jA4ONd.md.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/06/26/jA47nO.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/06/26/f2b834f0d4842a4c.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/06/26/jA4x3t.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/06/26/jA4VOO.png">
+<meta property="article:published_time" content="2022-06-26T08:49:34.000Z">
+<meta property="article:modified_time" content="2022-07-06T08:55:47.092Z">
 <meta property="article:author" content="cosmic">
 <meta property="article:tag" content="亿点心得">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/06/26/jA4v9I.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Linux安装java17流程 - xx辉の有感而发</title>
+  <title>我的世界Spigot1.18简易部署流程 - xx辉の有感而发</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +220,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux安装java17流程"></span>
+            <span id="subtitle" data-typed-text="我的世界Spigot1.18简易部署流程"></span>
           
         </div>
 
@@ -224,8 +231,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-26 12:11" pubdate>
-          2022年6月26日 中午
+        <time datetime="2022-06-26 16:49" pubdate>
+          2022年6月26日 下午
         </time>
       </span>
     
@@ -236,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.4k 字
         
       </span>
     
@@ -247,7 +254,7 @@
         
         
         
-          13 分钟
+          12 分钟
         
       </span>
     
@@ -285,62 +292,54 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux安装java17流程</h1>
+            <h1 style="display: none">我的世界Spigot1.18简易部署流程</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>最近心血来潮想在ECS上架设MC服务器和小伙伴一起玩耍回味童年的味道，那么就必须要安装java环境。</p>
-<p>Java版本后缀眼花缭乱，到底该安装哪个才能运行我的世界核心包，就是那个.jar的文件？</p>
-<p>首先需了解以下几个概念，这个问题就很好解决了：</p>
-<blockquote>
+                <h3 id="一、环境准备"><a href="#一、环境准备" class="headerlink" title="一、环境准备"></a>一、环境准备</h3><p>1、Java环境，MC不同的版本也有对应不同的java版本，例如这里的使用的spigot1.18需要java17</p>
+<p>2、服务端核心，下载地址<a target="_blank" rel="noopener" href="https://getbukkit.org/download/spigot">https://getbukkit.org/download/spigot</a></p>
+<h3 id="二、部署过程"><a href="#二、部署过程" class="headerlink" title="二、部署过程"></a>二、部署过程</h3><p>1、将上一步得到的核心文件spigot-1.xx.jar，上传至你的服务器目录运行即可。</p>
+<p>注意：运行后会生成很多服务端文件，所以可以新建一个文件夹用于存放服务端文件。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jA4v9I"><img src="https://s1.ax1x.com/2022/06/26/jA4v9I.png" srcset="/img/loading.gif" lazyload alt="jA4v9I.png"></a></p>
+<p>2、在服务端目录下运行以下指令，其中“spigot-1.18.jar”请自行更换为自己的核心名称。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">java -Xmx1024M -Xms1024M -jar spigot-1.18.jar nogui<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li><p>JDK(Java Development Kit)Java开发工具：包含：包含JRE，以及增加编译器和调试器等用于程序开发的文件。</p>
-</li>
-<li><p>JRE(Java Runtime Environment)Java环境：包含：Java虚拟机、库函数、运行Java应用程序所必须的文件。</p>
-</li>
-<li><p>JVM(Java Vitrual Machine)Java虚拟机：JVM就是一个虚拟的用于执行bytecode字节码的“虚拟计算机。</p>
-</li>
+<li><strong>-Xms</strong> 是指程序启动时初始内存大小（此值可以设置成与-Xmx相同，以避免每次GC完成后 JVM 内存重新分配）。</li>
+<li><strong>-Xmx</strong> 指程序运行时最大可用内存大小，程序运行中内存大于这个值会 OutOfMemory。</li>
 </ul>
-</blockquote>
-<p>jdk是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。jdk是整个java开发的核心，它包含了JAVA的运行环境，JAVA工具和JAVA</p>
-<p>基础的类库。</p>
-<p>就单独看名字也知道jdk最大，其次是jre，最后是jvm，jdk是java开发需要的工具包，它包括了jre，而jre是java程序运行时需要的运行环境，它包含了jvm，而jvm是java<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%99%9A%E6%8B%9F%E6%9C%BA&spm=1001.2101.3001.7020">虚拟机</a>，通过jvm编译字节码。</p>
-<p><strong>总结，虽然不是很懂，但是直接JDK版就完事了</strong></p>
-<h2 id="二、安装过程"><a href="#二、安装过程" class="headerlink" title="二、安装过程"></a>二、安装过程</h2><h3 id="2-1-Linux-手动安装Java17"><a href="#2-1-Linux-手动安装Java17" class="headerlink" title="2.1 Linux 手动安装Java17"></a>2.1 Linux 手动安装Java17</h3><p>1、下载安装包</p>
-<p><code>wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz</code></p>
-<p>java17和java8一样，都是LTS长期支持版本，因此这里直接下载java17</p>
-<p>2、解压安装包，修改自动下载的包名为jdk-17，注意包的名称，可能会有版本更迭。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar zxf jdk-17_linux-x64_bin.tar.gz<br><span class="hljs-built_in">rm</span> -rf jdk-17_linux-x64_bin.tar.gz<br><span class="hljs-built_in">mv</span> jdk-17.0.3.1 jdk-17<br></code></pre></td></tr></table></figure>
-
-<p>3、移动文件夹到&#x2F;opt下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mv</span> jdk-17 /opt<br></code></pre></td></tr></table></figure>
-
-<p>4、将java添加到环境变量末尾</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vi /etc/profile<br></code></pre></td></tr></table></figure>
-
-<p>centos7</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">export</span> JAVA_HOME=/opt/jdk-17<br><span class="hljs-built_in">export</span> PATH=/opt/php/bin:/usr/local/jdk-17/bin:<span class="hljs-variable">$PATH</span><br></code></pre></td></tr></table></figure>
-
-<p>ubuntu20.04</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">JAVA_HOME=/opt/jdk-17<br>PATH=<span class="hljs-variable">$JAVA_HOME</span>/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-built_in">export</span> JAVA_HOME PATH<br></code></pre></td></tr></table></figure>
-
-<p>5、重新加载环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> /etc/profile<br></code></pre></td></tr></table></figure>
-
-<p>6、验证java是否安装成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">java -version<br></code></pre></td></tr></table></figure>
-
-<p>显示下面内容，说明安装成功</p>
+<p>3、首次运行核心文件，会提示你同意本地目录下生成的一份用户协议文件，我们通过vim编辑它即可。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jA4ONd"><img src="https://s1.ax1x.com/2022/06/26/jA4ONd.md.png" srcset="/img/loading.gif" lazyload alt="jA4ONd.md.png"></a></p>
+<p>通过<code>vim eula.txt</code>修改eula该项的值为true即可，完成后ESC→:wq保存退出即可，再次运行java指令就会生成所有的游戏服务端文件，包括地图等等。</p>
+<p>5、经过漫长的等待后，出现下面的画面即为开服成功。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jA47nO"><img src="https://s1.ax1x.com/2022/06/26/jA47nO.png" srcset="/img/loading.gif" lazyload alt="jA47nO.png"></a></p>
+<p>6、请到安全组&#x2F;防火墙开放25565我的世界默认联机端口！</p>
 <blockquote>
-<p>java version “17” 2021-09-14 LTS<br>Java(TM) SE Runtime Environment (build 17+35-LTS-2724)<br>Java HotSpot(TM) 64-Bit Server VM (build 17+35-LTS-2724, mixed mode, sharing)</p>
+<p>TCP: 25565</p>
 </blockquote>
-<h3 id="2-2-Linux自动安装Java17"><a href="#2-2-Linux自动安装Java17" class="headerlink" title="2.2 Linux自动安装Java17"></a>2.2 Linux自动安装Java17</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt-get install openjdk-17-jdk<br></code></pre></td></tr></table></figure>
+<p>7、关闭正版认证</p>
+<p>如果需要关闭正版认证，请编辑目录下server.properties中<code>online-mode=false</code>，不然盗版用户将无法进入！</p>
+<h3 id="三、使用MCSManager托管你的服务器，"><a href="#三、使用MCSManager托管你的服务器，" class="headerlink" title="三、使用MCSManager托管你的服务器，"></a>三、使用MCSManager托管你的服务器，</h3><p>如果你想将你的服务进程运行在xshell的话，请使用screen挂起。</p>
+<p>或者使用一种操作更方便，更快捷，免费的管理面板MCSM: <a target="_blank" rel="noopener" href="https://mcsmanager.com/">https://mcsmanager.com/</a></p>
+<p>它适用于主流 Linux 系统，安装成功后，使用 systemctl start mcsm-{web, daemon} 命令即可启动。你只需要执行以下命令，即可完成MCSM的快速安装。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget -qO- https:<span class="hljs-regexp">//gi</span>tee.com<span class="hljs-regexp">/mcsmanager/</span>script<span class="hljs-regexp">/raw/m</span>aster/setup.sh | bash<br></code></pre></td></tr></table></figure>
 
-<p>出现如下输出即为安装成功</p>
+<p>安装完成后如图所示，使用 http:&#x2F;&#x2F;你的ip地址:23333 即可连接面板。之后对于服务器的启停操作，监控，文件管理会十分方便。</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/06/26/f2b834f0d4842a4c.png" srcset="/img/loading.gif" lazyload></p>
+<p>同样的，需放行端口23333(面板web服务)，24444(守护进程)</p>
 <blockquote>
-<p>root@iZbp1gqpip1640l5lh3uynZ:~# java -version<br>openjdk version “17.0.3” 2022-04-19<br>OpenJDK Runtime Environment (build 17.0.3+7-Ubuntu-0ubuntu0.20.04.1)<br>OpenJDK 64-Bit Server VM (build 17.0.3+7-Ubuntu-0ubuntu0.20.04.1, mixed mode, sharing)</p>
+<p>TCP:23333</p>
+<p>TCP:24444</p>
 </blockquote>
+<p>相关MCSM服务指令</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">重启 systemctl restart mcsm-</span><span class="hljs-template-variable">&#123;daemon,web&#125;</span><span class="language-xml">.service</span><br><span class="language-xml">禁用 systemctl disable mcsm-</span><span class="hljs-template-variable">&#123;daemon,web&#125;</span><span class="language-xml">.service</span><br><span class="language-xml">启用 systemctl enable mcsm-</span><span class="hljs-template-variable">&#123;daemon,web&#125;</span><span class="language-xml">.service</span><br><span class="language-xml">启动 systemctl start mcsm-</span><span class="hljs-template-variable">&#123;daemon,web&#125;</span><span class="language-xml">.service</span><br><span class="language-xml">停止 systemctl stop mcsm-</span><span class="hljs-template-variable">&#123;daemon,web&#125;</span><span class="language-xml">.service</span><br></code></pre></td></tr></table></figure>
+
+<p>更多使用说明，请参考：<a target="_blank" rel="noopener" href="https://docs.mcsmanager.com/">https://docs.mcsmanager.com</a></p>
+<h3 id="四、连接至服务器"><a href="#四、连接至服务器" class="headerlink" title="四、连接至服务器"></a>四、连接至服务器</h3><p>客户端，多人游戏，填入ip地址，完成连接。</p>
+<p>请同时告知你的小伙伴一起游玩吧~</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jA4x3t"><img src="https://s1.ax1x.com/2022/06/26/jA4x3t.png" srcset="/img/loading.gif" lazyload alt="jA4x3t.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/jA4VOO"><img src="https://s1.ax1x.com/2022/06/26/jA4VOO.png" srcset="/img/loading.gif" lazyload alt="jA4VOO.png"></a></p>
 
                 
               </div>
@@ -365,8 +364,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux安装java17流程</div>
-      <div>http://example.com/2022/06/26/Linux下Java17的安装/</div>
+      <div>我的世界Spigot1.18简易部署流程</div>
+      <div>http://example.com/2022/06/26/MinecraftSpigot1.18ServeInstall/</div>
     </div>
     <div class="license-meta">
       
@@ -384,7 +383,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月26日</div>
+          <div>2022年7月6日</div>
         </div>
       
       <div class="license-meta-item">
@@ -413,9 +412,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/26/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CSpigot1.18%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/" title="我的世界Spigot1.18简易部署流程">
+                      <a href="/2022/07/01/PesrsonalBlogInstall/" title="Hexo + Github pages 搭建个人博客">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我的世界Spigot1.18简易部署流程</span>
+                        <span class="hidden-mobile">Hexo + Github pages 搭建个人博客</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -423,8 +422,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/24/TeamSpeak%203%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%AE%80%E6%98%93%E9%83%A8%E7%BD%B2/" title="Teamspeak3服务端简易部署">
-                        <span class="hidden-mobile">Teamspeak3服务端简易部署</span>
+                      <a href="/2022/06/26/LinuxJava17Install/" title="Linux安装java17流程">
+                        <span class="hidden-mobile">Linux安装java17流程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
