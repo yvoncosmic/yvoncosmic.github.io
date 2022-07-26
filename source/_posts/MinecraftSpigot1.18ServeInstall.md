@@ -100,3 +100,23 @@ wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash
 [![jA4x3t.png](https://s1.ax1x.com/2022/06/26/jA4x3t.png)](https://imgtu.com/i/jA4x3t)
 
 [![jA4VOO.png](https://s1.ax1x.com/2022/06/26/jA4VOO.png)](https://imgtu.com/i/jA4VOO)
+
+
+
+### 五、补充
+
+2022/7/22 
+
+整了个新机器，在MCSManager尝试启动spigot1.18服务端时失败，在ssh启动却没有问题，其中MCSM报错：
+
+`[MCSMANAGER-PTY] Process Start Error:exec: "java": executable file not found in $PATH`
+
+`[MCSMANAGER] [ERROR] 检测到实例启动后在极短的时间内退出，原因可能是您的启动命令错误或配置文件错误。`
+
+解决方法：安装java SDK 17即可
+
+```
+sudo apt install openjdk-17-jdk
+```
+
+安装后就可以正常运行了，原理未知?_?

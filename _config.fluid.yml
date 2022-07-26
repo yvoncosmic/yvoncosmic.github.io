@@ -731,11 +731,11 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: disqus
+    type: waline
 
 
 #---------------------------
@@ -817,12 +817,12 @@ valine:
 # Derived from Valine, with self-hosted service and new features
 # See: https://waline.js.org/
 waline:
-  serverURL: ''
+  serverURL: 'https://myvercel.cosmic39.xyz/'
   path: window.location.pathname
   meta: ['nick', 'mail', 'link']
   requiredMeta: ['nick']
   lang: 'zh-CN'
-  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  emoji: ['https://unpkg.com/@waline/emojis@1.0.1/tieba']
   dark: 'html[data-user-color-scheme="dark"]'
   wordLimit: 0
   pageSize: 10
@@ -953,14 +953,15 @@ about:
   banner_img: /img/bg/sea2.jpg
   banner_img_height: 50
   banner_mask_alpha: 0.3
-  avatar: /img/tx.jpg
+  avatar: /img/full.jpg
   name: "吴宇辉"
   intro: "一无所有，但愿一往无前。"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/yvoncosmic", tip: "GitHub" }
-    - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
+    - { class: "iconfont icon-steam", link: "https://steamcommunity.com/id/cosmic39/", tip: "Steam" }
+    - { class: "iconfont icon-qq-fill", link: "http://wpa.qq.com/msgrd?v=3&uin=810683092&site=qq&menu=yes", tip: "QQ" }
     - { class: "iconfont icon-wechat-fill", qrcode: "/img/qrcode.png" }
 
 

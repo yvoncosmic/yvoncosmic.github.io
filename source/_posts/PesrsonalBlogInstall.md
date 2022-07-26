@@ -147,7 +147,7 @@ description: 摘要
 
 </br>
 
-**4.3、本地部署静态页面**
+**4.3、一键预览静态页面**
 
 ```bash
 hexo cl && hexo g && hexo s
@@ -199,10 +199,10 @@ deploy:
  branch: main
 ```
 
-⑥部署至github pages
+⑥部署至github pages，一键推送命令
 
 ```bash
-hexo cl && hexo g && hexo d #一键推送
+hexo cl && hexo g && hexo d
 ```
 
 ⑦查看blog：[https://yvoncosmic.github.io](https://yvoncosmic.github.io)
